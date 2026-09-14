@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en-ZA">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#111827"><meta name="description" content="ToolHome — buy, sell and swap furniture, tools, machinery and useful gear.">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="apple-touch-icon" href="icon-192.png">
+<title>ToolHome — Buy. Sell. Swap.</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div id="app">
+  <header class="topbar">
+    <div class="brand"><span class="logo">TH</span><div><b>ToolHome</b><small>Buy. Sell. Swap.</small></div></div>
+    <div class="search"><span>⌕</span><input id="search" placeholder="Search furniture, tools, machinery…"><button id="clear">×</button></div>
+    <button class="iconbtn" id="notify">♢</button><button class="profileMini" id="loginBtn">Sign in</button>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div><p class="eyebrow">SOUTH AFRICA'S USEFUL STUFF MARKETPLACE</p><h1>Find it. Sell it.<br><em>Put it to work.</em></h1><p>Furniture, tools, workshop gear, machinery and more — from people and businesses near you.</p>
+        <div class="heroBtns"><button class="primary" data-tab="sell">＋ Sell an item</button><button class="ghost" data-tab="browse">Browse marketplace</button></div>
+      </div>
+      <div class="heroCard"><span>🔥 Trending</span><b>Makita tools</b><strong>from R1,250</strong><small>Fresh listings this week</small></div>
+    </section>
+
+    <nav class="tabs">
+      <button class="active" data-tab="browse">Marketplace</button><button data-tab="saved">Saved</button><button data-tab="offers">Offers</button><button data-tab="messages">Messages</button><button data-tab="profile">Profile</button><button data-tab="sell">Sell</button>
+    </nav>
+
+    <section id="browse" class="view active">
+      <div class="sectionHead"><div><h2>Browse</h2><p id="resultCount"></p></div><select id="sort"><option value="new">Newest</option><option value="low">Price: low to high</option><option value="high">Price: high to low</option></select></div>
+      <div class="chips" id="chips"></div>
+      <div class="grid" id="grid"></div>
+    </section>
+
+    <section id="saved" class="view"><div class="sectionHead"><div><h2>Saved items</h2><p>Your favourites</p></div></div><div class="grid" id="savedGrid"></div></section>
+
+    <section id="offers" class="view"><div class="sectionHead"><div><h2>Your offers</h2><p>Track offers you've made</p></div></div><div id="offerList" class="list"></div></section>
+
+    <section id="messages" class="view"><div class="sectionHead"><div><h2>Messages</h2><p>Buyer & seller conversations</p></div></div><div id="messageList" class="list"></div></section>
+
+    <section id="profile" class="view"><div class="profileCard"><div class="avatar">FL</div><div><h2>My ToolHome</h2><p>Member · South Africa</p></div><button class="ghost">Edit profile</button></div><div class="stats"><div><b>0</b><span>Listings</span></div><div><b>0</b><span>Sales</span></div><div><b>0</b><span>Reviews</span></div></div><div class="notice"><b>V3 is app-ready.</b><p>This build uses a native mobile shell (Capacitor) with a web fallback, so the same product can ship to Google Play and Apple App Store.</p></div></section>
+
+    <section id="sell" class="view"><div class="formCard"><div class="steps"><span class="step active">1 Details</span><span class="step">2 Photos</span><span class="step">3 Publish</span></div><h2>Sell an item</h2><p>Create a listing in under a minute.</p><label>Photos<input type="file" accept="image/*" multiple id="photos"></label><div id="previews"></div><label>Title<input id="title" placeholder="e.g. Makita angle grinder 18V"></label><label>Category<select id="category"></select></label><div class="two"><label>Price (R)<input id="price" type="number" placeholder="2500"></label><label>Condition<select id="condition"><option>Excellent</option><option>Good</option><option>Fair</option><option>For parts</option></select></label></div><label>Description<textarea id="desc" placeholder="Tell buyers about the item…"></textarea></label><button class="primary wide" id="publish">Publish listing</button><p class="fine">By publishing you agree to ToolHome’s marketplace rules.</p></div></section>
+  
+    <section id="dashboard" class="view"><div class="sectionHead"><div><h2>Seller dashboard</h2><p>Manage listings, offers and sales</p></div><button class="primary" data-tab="sell">＋ New listing</button></div><div class="stats"><div><b id="dashListings">0</b><span>Active listings</span></div><div><b id="dashOffers">0</b><span>Offers</span></div><div><b id="dashSales">0</b><span>Sales</span></div></div><div id="dashList" class="list"></div></section>
+  </main>
+
+  <div class="modal" id="modal"><div class="sheet"><button class="close" id="close">×</button><div id="modalBody"></div></div></div>
+  <div class="toast" id="toast"></div>
+</div>
+<script src="config.js"></script><script src="supabase_client.js"></script><script src="services.js"></script><script src="live_backend.js"></script><script src="app.js"></script><script src="v5.js"></script>
+</body></html>

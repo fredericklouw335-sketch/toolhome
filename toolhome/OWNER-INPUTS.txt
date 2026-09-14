@@ -1,0 +1,10 @@
+TOOLHOME — REQUIRED OWNER INPUTS
+
+1. Supabase project URL
+2. Supabase publishable/anon key
+3. Payment provider merchant account/API credentials (server-side only)
+4. Google Play Console account
+5. Apple Developer account (requires Mac/Xcode for final signing)
+6. Final company/legal details for Terms + Privacy Policy
+7. Support email
+8. App-store screenshots/branding approval
